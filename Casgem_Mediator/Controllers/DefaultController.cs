@@ -33,5 +33,19 @@ namespace Casgem_Mediator.Controllers
             await _mediator.Send(command);
             return RedirectToAction("Index");
         }
+
+
+        [HttpGet]
+        public IActionResult UpdateProduct()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UodateProduct(CreateProductCommand command)
+        {
+            await _mediator.Send(command);
+            return RedirectToAction("Index");
+        }
     }
 }
